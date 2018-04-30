@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>animation</title>
+    <style type="text/css">
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        main{
+            background: white;
+            width: 250px;
+            height: 250px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -125px;
+            margin-left: -125px;
+            background-color: aliceblue;
+        }
+        div{
+            text-align: center;
+        }
+        h2{
+            text-align: center;
+            color: black;
+            margin-top: 50px;
+            display: block;
+            width: 120px;
+            margin-left: 60px;
+        }
+        span{
+            height: 2px;
+            width: 1px;
+            color: black;
+            display: inline-block;
+        }
+        @keyframes Extensional {
+            from{}
+            to{
+                width: 100px;
+                border-bottom: solid aqua 3px;
+                color: aqua;
+            }
+        }
+        @keyframes Contraction{
+            from{}
+            to{
+                width: 1px;
+                border-bottom: solid aqua 3px;
+                color: aqua;
+            }
+        }
+        @keyframes h2Color {
+            from{color: aqua;}
+            to{
+                color:black;
+            }
+        }
+        button{
+            width: 100px;
+            height: 27px;
+            margin-left: 72px;
+            margin-top: 50px;
+        }
+    </style>
+
+
+
+</head>
+<body>
+<main>
+    <div>
+        <h2>前端学院</h2>
+        <span></span>
+    </div>
+    <button id="animationChange" onclick="buttonF()">切换样式</button>
+    <script type="text/javascript">
+        var button=document.getElementsByTagName("button")[0];
+        var h2=document.getElementsByTagName("h2")[0];
+        var span=document.getElementsByTagName("span")[0];
+        function buttonF() {
+            h2.style.color="aqua";
+            span.style.animation=" Extensional 5s ease-in-out 1";
+            span.style.width="100px";
+            setTimeout("remove()",5000);
+        }
+        function remove() {
+            span.style.animation=" Contraction 1000ms ease-in-out 1";
+            h2.style.animation="h2Color 1000ms linear 1";
+            h2.style.color="black";
+        }
+
+    </script>
+
+
+</main>
+
+</body>
+</html>
